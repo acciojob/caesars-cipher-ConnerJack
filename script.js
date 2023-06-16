@@ -35,8 +35,12 @@ function rot13(encodedStr) {
   let decodedArr =""; // Your Result goes here
   // Only change code below this line
   for (let index = 0; index < encodedStr.length; index++) {
-  	let c = lookup.encodedStr.charAt(index)
-	  decodedArr += c
+	  if (lookup[encodedStr[index] === undefined]) {
+		  decodedArr += encodedStr[index]
+	  } else {
+		  decodedArr += lookup[encodedStr[index]]
+	  }
+  	
   }
   return decodedArr; //return decodedArr
 }
